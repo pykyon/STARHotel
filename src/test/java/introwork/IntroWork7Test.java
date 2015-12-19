@@ -2,6 +2,10 @@ package introwork;
 
 import core.ChromeDriverTest;
 import org.junit.Test;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.By;
+import static org.junit.Assert.*;
+import static org.hamcrest.core.Is.*;
 
 import java.io.File;
 
@@ -16,7 +20,10 @@ public class IntroWork7Test extends ChromeDriverTest {
         driver.get(url);
         
         // TODO 以下を削除して、代わりにプルダウンを選択する処理を記述してください
-        Thread.sleep(8000);
+        // Thread.sleep(8000);
+        WebElement total
+                = driver.findElement(By.id("total"));
+        assertThat(total.getText(), is("9000"));
         // TODO ここまで削除してください
     }
 }
